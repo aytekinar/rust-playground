@@ -1,0 +1,22 @@
+{
+  "name": "rust-playground",
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+  "service": "development",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vadimcn.vscode-lldb",
+        "ms-azuretools.vscode-docker",
+        "tamasfe.even-better-toml",
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint",
+        "mechatroner.rainbow-csv",
+        "rust-lang.rust-analyzer",
+        "redhat.vscode-yaml"
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+services:
+  development:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        BASE_IMAGE: rust
+        BASE_VERSION: 1-bookworm
+        DEVEL_DEPS: binutils build-essential clang-16 curl git gpg libcap2-bin linux-perf lld-16 lldb-16 vim sudo
+        USER_NAME: ${USER_NAME:-microsoft}
+        USER_ID: ${USER_ID:-1000}
+        USER_SHELL: ${USER_SHELL:-/bin/bash}
+    cap_add:
+      - BPF
+      - PERFMON
+      - SYS_PTRACE
+    tty: true
+    user: ${USER_NAME:-microsoft}
+    volumes:
+      - .:/workspace
